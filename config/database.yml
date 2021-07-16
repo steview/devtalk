@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  user: postgres
+  password: postgres
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  min_messages: error
+
+development:
+  <<: *default
+  database: devtalk_development
+
+test:
+  <<: *default
+  database: devtalk_test
+
+production:
+  <<: *default
+  database: devtalk_production
