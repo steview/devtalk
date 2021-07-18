@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
   host: db
   user: postgres
-  password: postgres
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   min_messages: error
 
